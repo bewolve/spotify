@@ -1,6 +1,5 @@
 import { sideBarLinks } from "@/constants";
 import { authOptions } from "@/lib/auth";
-import { axiosInstance } from "@/lib/axios";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { SidebarMusic } from "./SidebarMusic";
@@ -8,13 +7,12 @@ import { SidebarLinks } from "@/types";
 
 export const Sidebar = async () => {
   const session: any = await getServerSession(authOptions);
-  const data = await axiosInstance
-    .get("me/top/tracks?limit=5", {
-      headers: {
-        Authorization: `Bearer ${session?.access}`,
-      },
-    })
-    .then((res) => res.data);
+  const data = await fetch(`${process.env.API}/me/top/tracks?limit=5`, {
+    headers: {
+      Authorization: `Bearer ${session?.access}`,
+    },
+    cache: "force-cache",
+  }).then((res) => res.json());
 
   return (
     <div className="h-screen bg-zinc-900 scrollbar-hide overflow-y-scroll">

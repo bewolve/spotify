@@ -7,3 +7,5 @@ CLIENT_SECRET= // spotify client secret
 NEXTAUTH_SECRET= // next-auth secret
 
 NEXTAUTH_URL=http://localhost:3000/ // next-auth url
+
+API= //api url
