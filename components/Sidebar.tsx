@@ -17,7 +17,7 @@ export const Sidebar = async () => {
   return (
     <div className="h-screen overflow-y-scroll bg-zinc-900 scrollbar-hide">
       <div className="wrapper space-y-16 px-6 py-8">
-        <div className="links space-y-4">
+        <div className="links space-y-6">
           {sideBarLinks.map((links: SidebarLinks) => (
             <div
               className="navlink-item flex items-center gap-3 text-xl text-secondary transition duration-200 hover:scale-105 hover:text-primary"
