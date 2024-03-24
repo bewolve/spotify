@@ -22,7 +22,7 @@ export const Sidebar = async () => {
         <div className="links space-y-4">
           {sideBarLinks.map((links: SidebarLinks) => (
             <div
-              className="navlink-item text-xl flex items-center gap-3 text-secondary hover:text-primary"
+              className="navlink-item text-xl flex items-center gap-3 text-secondary hover:text-primary transition duration-200"
               key={links.name}
             >
               <links.icon />
