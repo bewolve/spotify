@@ -18,7 +18,7 @@ export const Topbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="text-secondary bg-transparent z-[99] flex items-center justify-between px-8 py-2 gap-4">
+    <header className="text-secondary bg-transparent z-[99] flex items-center justify-between px-8 py-2 gap-4 mb-6">
       <div className="links space-x-4 text-nowrap">
         {navLinks.map((link) => (
           <Link
@@ -46,7 +46,11 @@ export const Topbar = () => {
 
       <div className="right-side">
         <div className="image relative w-12 h-12 ring-2 ring-primary overflow-hidden rounded-full hover:cursor-pointer">
-          <Image src={user?.images[0].url!} fill alt="user-display" />
+          <img
+            src={user?.images[0].url}
+            className="object-cover absolute"
+            alt="user-display"
+          />
         </div>
       </div>
     </header>

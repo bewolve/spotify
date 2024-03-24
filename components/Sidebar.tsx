@@ -7,7 +7,7 @@ import { SidebarLinks } from "@/types";
 
 export const Sidebar = async () => {
   const session: any = await getServerSession(authOptions);
-  const data = await fetch(`${process.env.API}/me/top/tracks?limit=5`, {
+  const data = await fetch(`${process.env.API}/me/top/tracks?limit=10`, {
     headers: {
       Authorization: `Bearer ${session?.access}`,
     },
