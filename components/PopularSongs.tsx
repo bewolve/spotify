@@ -12,7 +12,7 @@ export const PopularSongs = async () => {
         Authorization: `Bearer ${user?.access}`,
       },
       cache: "force-cache",
-    }
+    },
   )
     .then((res) => res.json())
     .catch((error) => {
@@ -20,7 +20,7 @@ export const PopularSongs = async () => {
     });
 
   return (
-    <div className="overflow-y-hidden overflow-x-scroll scrollbar-hide flex gap-x-4">
+    <div className="flex gap-x-4 overflow-y-hidden overflow-x-scroll scrollbar-hide">
       {data.tracks.map((track: any) => (
         <Song
           key={track.id}

@@ -14,12 +14,12 @@ export const Hero = async () => {
         Authorization: `Bearer ${user?.access}`,
       },
       cache: "force-cache",
-    }
+    },
   ).then((res) => res.json());
 
   return (
-    <div className="grid grid-cols-2 h-[50vh] gap-x-4">
-      <div className="headings space-y-5 text-secondary self-center pl-12">
+    <div className="grid h-[50vh] grid-cols-2 gap-x-4">
+      <div className="headings space-y-5 self-center pl-12 text-secondary">
         <h1 className="text-6xl">
           Follow <span className="font-bold text-primary">{data.name}</span>
         </h1>
@@ -28,14 +28,14 @@ export const Hero = async () => {
           <a
             target="_blank"
             href={data.external_urls.spotify}
-            className="font-bold font-primary"
+            className="font-primary font-bold underline underline-offset-4"
           >
             {data.name}
           </a>
           .
         </h5>
       </div>
-      <div className="image relative rounded-md overflow-hidden">
+      <div className="image relative overflow-hidden rounded-md">
         <Image
           src={data.images[0].url}
           fill

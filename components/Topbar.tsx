@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Input } from "./ui/input";
-import Image from "next/image";
 import { User } from "@/types";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -18,7 +17,7 @@ export const Topbar = () => {
   const pathname = usePathname();
 
   return (
-    <header className="text-secondary bg-transparent z-[99] flex items-center justify-between px-8 py-2 gap-4 mb-6">
+    <header className="z-[99] mb-6 flex items-center justify-between gap-4 bg-transparent px-8 py-2 text-secondary">
       <div className="links space-x-4 text-nowrap">
         {navLinks.map((link) => (
           <Link
@@ -26,7 +25,7 @@ export const Topbar = () => {
             href={link.href}
             className={cn(
               "font-bold text-muted-foreground",
-              pathname === link.href && "text-secondary"
+              pathname === link.href && "text-secondary",
             )}
           >
             {link.name}
@@ -34,21 +33,21 @@ export const Topbar = () => {
         ))}
       </div>
 
-      <div className="input-element relative">
+      <div className="input-element group relative">
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-full relative text-secondary bg-transparent backdrop-blur-md pl-12"
+          className="relative rounded-full bg-transparent pl-12 text-secondary backdrop-blur-md transition duration-200 focus:scale-105"
           placeholder="Search..."
         />
-        <SearchIcon className="absolute left-2 top-1/2 -translate-y-1/2 " />
+        <SearchIcon className="absolute left-2 top-1/2 -translate-y-1/2" />
       </div>
 
       <div className="right-side">
-        <div className="image relative w-12 h-12 ring-2 ring-primary overflow-hidden rounded-full hover:cursor-pointer">
+        <div className="image relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-primary hover:cursor-pointer">
           <img
             src={user?.images[0].url}
-            className="object-cover absolute"
+            className="absolute object-cover"
             alt="user-display"
           />
         </div>

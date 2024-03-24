@@ -15,12 +15,12 @@ export const Sidebar = async () => {
   }).then((res) => res.json());
 
   return (
-    <div className="h-screen bg-zinc-900 scrollbar-hide overflow-y-scroll">
-      <div className="wrapper px-6 py-8 space-y-16">
+    <div className="h-screen overflow-y-scroll bg-zinc-900 scrollbar-hide">
+      <div className="wrapper space-y-16 px-6 py-8">
         <div className="links space-y-4">
           {sideBarLinks.map((links: SidebarLinks) => (
             <div
-              className="navlink-item text-xl flex items-center gap-3 text-secondary hover:text-primary transition duration-200"
+              className="navlink-item flex items-center gap-3 text-xl text-secondary transition duration-200 hover:scale-105 hover:text-primary"
               key={links.name}
             >
               <links.icon />
@@ -32,7 +32,7 @@ export const Sidebar = async () => {
         </div>
 
         <div className="side-bar-music space-y-3">
-          <h1 className="text-3xl font-bold text-secondary mb-12">
+          <h1 className="mb-12 text-3xl font-bold text-secondary">
             Your Top Track
           </h1>
           {data.items.map((item: any) => (

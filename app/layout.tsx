@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-black scroll-smooth", inter.className)}>
+      <body className={cn("scroll-smooth bg-black", inter.className)}>
         <Provider>
-          <main className="min-h-screen grid grid-cols-4">
+          <main className="grid min-h-screen grid-cols-4">
             <Sidebar />
             <div className="inner-main col-span-3 min-w-full">
               <Topbar />

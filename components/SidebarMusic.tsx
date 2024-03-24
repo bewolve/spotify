@@ -10,9 +10,9 @@ export const SidebarMusic = ({
   url,
 }: SidebarMusicProps) => {
   return (
-    <a key={id} href={url} target="_blank" className="block group">
-      <div className="flex items-center gap-x-4 group-hover:scale-105 transition duration-200">
-        <div className="image relative min-w-10 min-h-10 overflow-hidden rounded-md">
+    <a key={id} href={url} target="_blank" className="group block">
+      <div className="flex items-center gap-x-4 transition duration-200 group-hover:scale-105">
+        <div className="image relative min-h-10 min-w-10 overflow-hidden rounded-md">
           <Image src={image} alt="hahaha" fill className="object-cover" />
         </div>
         <p className="truncate text-secondary">
