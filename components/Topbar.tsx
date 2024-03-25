@@ -33,7 +33,7 @@ export const Topbar = () => {
         ))}
       </div>
 
-      <div className="input-element group relative">
+      <div className="input-element group relative hidden md:block">
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}

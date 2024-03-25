@@ -24,9 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("scroll-smooth bg-black", inter.className)}>
         <Provider>
-          <main className="grid min-h-screen grid-cols-4">
-            <Sidebar />
-            <div className="inner-main col-span-3 min-w-full">
+          <main className="min-h-screen md:grid md:grid-cols-[1fr_3fr]">
+            <div className="sidebar relative overflow-x-hidden">
+              <Sidebar />
+            </div>
+            <div className="inner-main flex min-h-screen min-w-full flex-col">
               <Topbar />
               {children}
             </div>

@@ -15,12 +15,12 @@ export const Sidebar = async () => {
   }).then((res) => res.json());
 
   return (
-    <div className="h-screen overflow-y-scroll bg-zinc-900 scrollbar-hide">
+    <div className="absolute inset-y-0 hidden w-full overflow-hidden bg-zinc-900 md:block">
       <div className="wrapper space-y-16 px-6 py-8">
         <div className="links space-y-6">
           {sideBarLinks.map((links: SidebarLinks) => (
             <div
-              className="navlink-item flex items-center gap-3 text-xl text-secondary transition duration-200 hover:scale-105 hover:text-primary"
+              className="navlink-item flex items-center space-x-2 text-base text-secondary transition duration-200 hover:scale-105 hover:text-primary"
               key={links.name}
             >
               <links.icon />
@@ -31,20 +31,20 @@ export const Sidebar = async () => {
           ))}
         </div>
 
-        <div className="side-bar-music space-y-3">
-          <h1 className="mb-12 text-3xl font-bold text-secondary">
-            Your Top Track
-          </h1>
-          {data.items.map((item: any) => (
-            <SidebarMusic
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              artist={item.artists[0].name}
-              image={item.album.images[0].url}
-              url={item.external_urls.spotify}
-            />
-          ))}
+        <div className="side-bar-music space-y-4">
+          <h1 className="text-3xl font-bold text-secondary">Your Top Track</h1>
+          <div className="tracks space-y-3">
+            {data.items.map((item: any) => (
+              <SidebarMusic
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                artist={item.artists[0].name}
+                image={item.album.images[0].url}
+                url={item.external_urls.spotify}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
