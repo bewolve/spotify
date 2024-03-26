@@ -1,8 +1,9 @@
+// @ts-nocheck
 "use client";
 
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "./ui/input";
 import { User } from "@/types";
 import { cn } from "@/lib/utils";
@@ -11,10 +12,12 @@ import { SearchIcon } from "lucide-react";
 import { navLinks } from "@/constants";
 
 export const Topbar = () => {
-  // @ts-ignore
   const { data: user }: { data: User | null } = useSession();
   const [search, setSearch] = useState("");
   const pathname = usePathname();
+
+  // const count = useStore((state) => state.count);
+  // const update = useStore((state) => state.update);
 
   return (
     <header className="z-[99] mb-6 flex items-center justify-between gap-4 bg-transparent px-8 py-2 text-secondary">

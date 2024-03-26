@@ -9,7 +9,7 @@ export const CardWrapper = ({ name, singer, image }: CardProps) => {
       <CardHeader className="px-2">
         <CardTitle className=" truncate">{name}</CardTitle>
         <h4 className="text-sm">
-          Author: <span className="font-bold truncate">{singer}</span>
+          Author: <span className="truncate font-bold">{singer}</span>
         </h4>
       </CardHeader>
       <CardContent className="relative min-h-48 overflow-hidden">
