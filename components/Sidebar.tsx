@@ -15,7 +15,7 @@ export const Sidebar = async () => {
   }).then((res) => res.json());
 
   return (
-    <div className="absolute inset-y-0 hidden w-full overflow-hidden bg-zinc-900 md:block">
+    <div className="absolute inset-y-0 hidden w-full overflow-x-hidden bg-zinc-900 scrollbar-hide md:block">
       <div className="wrapper space-y-16 px-6 py-8">
         <div className="links space-y-6">
           {sideBarLinks.map((links: SidebarLinks) => (

@@ -20,14 +20,14 @@ export const navLinks = [
 
 export const sideBarLinks: SidebarLinks[] = [
   {
+    name: "Browse",
+    href: "/browse",
+    icon: AiOutlineHistory,
+  },
+  {
     name: "My Playlist",
     href: "/playlist",
     icon: LuMusic2,
-  },
-  {
-    name: "Last Listening",
-    href: "/last-listening",
-    icon: AiOutlineHistory,
   },
   {
     name: "Recommended",

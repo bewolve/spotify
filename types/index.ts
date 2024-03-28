@@ -19,7 +19,7 @@ export interface SidebarLinks {
 
 export interface CardProps {
   name: string;
-  singer: string;
+  singer?: string;
   image: string;
   href?: string;
 }
